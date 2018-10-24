@@ -94,7 +94,7 @@ http://www.springframework.org/schema/aop
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
             </props>
         </property>
-        <property name="packagesToScan" value="com.app.S2S.dao"></property>
+        <property name="packagesToScan" value="com.app.S2S.beans"></property>
 </bean>
 
 <bean id="transactionManager"
