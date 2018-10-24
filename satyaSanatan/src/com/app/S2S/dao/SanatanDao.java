@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 public class SanatanDao {
 	@Autowired
 	private SessionFactory sessionFactory;
-
+   
 }
