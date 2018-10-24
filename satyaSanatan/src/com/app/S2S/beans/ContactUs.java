@@ -27,6 +27,11 @@ public class ContactUs {
 		this.mobile=mobile;
 		this.query=query;
 	}
+	
+	public ContactUs()
+	{
+		
+	}
 	public int getId() {
 		return id;
 	}
