@@ -20,7 +20,7 @@ import com.app.S2S.beans.LoginDetails;
 
 /**
  *
- * @author pradeep
+ * @author pradeep 
  */
 public class AuthenticationInterceptor implements HandlerInterceptor {
 
