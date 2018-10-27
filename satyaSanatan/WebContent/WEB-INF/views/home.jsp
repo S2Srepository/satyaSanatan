@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html lang="en">
+    pageEncoding="UTF-8"%><html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +16,109 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-   <style type="text/css">
-   .cate-head{
+  </head>
+  <body style="font-family: 'Quicksand', sans-serif;">
+   
+ <div id="header">
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="home.html"><img class="img-responsive" src="img/adi-shankara-logo.png" width="100%"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+     
+      <ul class="nav navbar-nav navbar-right">
+	      <li class="courselist_link"><a href="about-us.html">About</a></li>
+	      <li class="courselist_link"><a href="contact.html">Contact Us</a></li>
+	      <li class="courselist_link"><a href="upload.html">Upload File</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+
+<div class="veda-wrapper">
+	<div class="container">
+		<div class="col-sm-12 col-md-12">
+			<div class="ved-text">
+				<p>A Team of individual <b>Software Developers</b> who want to develop a platform to boost interest of this generation towards spirituality. The purpose is to create repository of Indian Texts and serve as a one stop shop of <b>Vedas</b> (RigVeda, YajurVeda, SamVeda, AtharvaVeda), <b>Upanishad</b> (Ishopanishad, Kathopanishad, Kenopanishad, Chhandogya Upanishad, Svetasvara Upanishad), <b>Itihas</b> (Valmiki Ramayan, Mahabharata), <b>Miscellaneous</b> (other than above mentioned)</p>
+				<p>The original texts are in Sanskrit and you also have the option to browse through Hindi / English commentaries of the same.</p>
+			</div>
+		</div>
+		<div class="ved-category">
+		<div class="row">
+						<div class="col-sm-1"></div>
+
+			<div class="col-sm-5">
+				<div class="cate-head col-sm-12">
+					<div class="ved-categ col-md-12" align="center">
+						<h2>Upanishad</h2>
+						<p>The Upanishads, a part of the Vedas, are ancient Sanskrit texts that contain some of the central philosophical concepts and ideas of Hinduism, some of which are shared with religious traditions like Buddhism and Jainism</p>
+						<p><b>( Ishopanishad, Kathopanishad, Kenopanishad, Chhandogya Upanishad, Svetasvara Upanishad )</b></p>
+						<a href="#" class="btn btn-primary"> Read Now</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-5">
+				<div class="cate-head1 col-sm-12">
+					<div class="ved-categ col-sm-12">
+						<h2>Vedas</h2>
+						<p>The Vedas are a large body of knowledge texts originating in the ancient Indian subcontinent. Composed in Vedic Sanskrit, the texts constitute the oldest layer of Sanskrit literature and the oldest scriptures of Hinduism.</p>
+						<p><b>( RigVeda, YajurVeda, SamVeda, AtharvaVeda )</b></p>
+						<a href="#" class="btn btn-primary"> Read Now</a>
+					</div>
+				</div>
+			</div>
+					<div class="col-sm-1"></div>
+		</div>
+		<div class="row">
+									<div class="col-sm-1"></div>
+
+			<div class="col-sm-5">
+				<div class="cate-head2 col-sm-12">
+					<div class="ved-categ col-sm-12">
+						<h2>Itihas</h2>
+						<p>In Sanskrit, Itihasa means history. For Hindus, an Itihasa is a religious story that tells about what happened in the past. Itihasas are usually epic poems. The important itihasas to Hindus are the Ramayana and the Mahabharata.</p>
+						<p><b>( Valmiki Ramayan, Mahabharata )</b></p>
+						<a href="#" class="btn btn-primary"> Read Now</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-5">
+				<div class="cate-head3 col-sm-12 img-responsive">
+					<div class="ved-categ col-sm-12">
+						<h2>Miscellaneous</h2>
+						<p>Miscellaneous definition is - consisting of diverse things or members : heterogeneous. How to use miscellaneous in a sentence.</p>
+						<p><b>( other than above mentioned )</b></p>
+						<a href="Rigveda.pdf" target="_blankx" class="btn btn-primary"> Read Now</a>
+					</div>
+				</div>
+			</div>
+									<div class="col-sm-1"></div>
+
+		</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="veda-footer">
+	<div class="footer">
+		<p>© Copyright 2018. All Rights Reserved.</p>
+	</div>
+</div>
+<style>
+.cate-head{
 	background: url('img/bhagwat-gite.png');
 	background-repeat: no-repeat;
     height: 100%;
@@ -62,120 +162,7 @@
     height: 300px;
     margin: 30px;
 }
-   </style>
-  </head>
-  
-  <body style="font-family: 'Quicksand', sans-serif;">
-   
- <div id="header">
-<nav class="navbar navbar-default">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="home.html"><img class="img-responsive" src="img/adi-shankara.png" width="30%"></a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      
-     
-      <ul class="nav navbar-nav navbar-right">
-      	<li><a href="#">Category</a></li>
-        <li><a href="about-us.html">About</a></li>
-        <li><a href="Contact_US">Contact Us</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-</div>
-
-<div class="veda-wrapper">
-	<div class="container">
-		<div class="col-sm-12 col-md-12">
-			<div class="ved-text">
-				<p><b>Lorem Ipsum </b>is simply dummy text of the printing and <b>typesetting industry.</b> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-			</div>
-		</div>
-		<div class="ved-category">
-		<div class="row">
-						<div class="col-sm-1"></div>
-
-			<div class="col-sm-5">
-				<div class="cate-head col-sm-12">
-					<div class="ved-categ col-md-12" align="center">
-						<h2>Lorem Ipsum is simply</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-						<a href="#" class="btn btn-primary"> Read Now</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-5">
-				<div class="cate-head1 col-sm-12">
-					<div class="ved-categ col-sm-12">
-						<h2>Lorem Ipsum is simply</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-						<a href="#" class="btn btn-primary"> Read Now</a>
-					</div>
-				</div>
-			</div>
-					<div class="col-sm-1"></div>
-		</div>
-		<div class="row">
-									<div class="col-sm-1"></div>
-
-			<div class="col-sm-5">
-				<div class="cate-head2 col-sm-12" >
-					<div class="ved-categ col-sm-12">
-						<h2>Lorem Ipsum is simply</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-						<a href="#" class="btn btn-primary"> Read Now</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-5">
-				<div class="cate-head3 col-sm-12 img-responsive">
-					<div class="ved-categ col-sm-12">
-						<h2>Lorem Ipsum is simply</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-						<a href="Rigveda.pdf" target="_blankx" class="btn btn-primary"> Read Now</a>
-					</div>
-				</div>
-			</div>
-									<div class="col-sm-1"></div>
-
-		</div>
-		</div>
-	</div>
-</div>
-
-<!-- <div class="socialmedia-btn">
-		
-		<ul>
-			<li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-			<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-			<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-			<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-			<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-			<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-			<li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-			<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-			<div style="clear: both;"></div>
-		</ul>
-	</div>
- -->
-
-<div class="veda-footer">
-	<div class="footer">
-		<p>© Copyright 2018. All Rights Reserved.</p>
-	</div>
-</div>
-
+</style>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
