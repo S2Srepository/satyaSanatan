@@ -1,6 +1,7 @@
 package com.app.S2S.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,8 @@ import com.app.S2S.service.UserDataValue;
 public class AdminController {
 	@Autowired
 	UserDataValue udv;
+	@Autowired
+	private HttpSession session;
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String ragistration(HttpServletRequest request) {
 		System.out.println("h......");
