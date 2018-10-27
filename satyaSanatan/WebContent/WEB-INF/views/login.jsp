@@ -6,9 +6,12 @@
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="login.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
 
+body#LoginForm{ background-image:url("img/geeta1.png"); background-repeat:no-repeat; background-position:center; background-size:cover; padding:10px;}
+</style>
 </head>
 <body id="LoginForm">
 <div class="container">

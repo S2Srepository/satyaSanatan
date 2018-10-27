@@ -38,9 +38,9 @@
       
      
       <ul class="nav navbar-nav navbar-right">
-	      <li class="courselist_link"><a href="about-us.html">About</a></li>
-	      <li class="courselist_link"><a href="contact.html">Contact Us</a></li>
-	      <li class="courselist_link"><a href="upload.html">Upload File</a></li>
+	      <li class="courselist_link"><a href="About_Us">About</a></li>
+	      <li class="courselist_link"><a href="Contact_US">Contact Us</a></li>
+	      <li class="courselist_link"><a href="Upload_document">Upload File</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

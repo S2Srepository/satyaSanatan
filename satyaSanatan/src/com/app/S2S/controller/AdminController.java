@@ -31,4 +31,19 @@ public class AdminController {
 		udv.saveContact(contact);
 		return "ContactUs";
 	}
+	@RequestMapping(value = "About_Us", method = RequestMethod.GET)
+	public String about(HttpServletRequest request) {
+		System.out.println("-----------------------S2S----------------------------------");
+		return "about";
+	}
+	@RequestMapping(value = "login", method = RequestMethod.GET)
+	public String login(HttpServletRequest request) {
+		System.out.println("-----------------------S2S----------------------------------");
+		return "login";
+	}
+	@RequestMapping(value = "Upload_document", method = RequestMethod.GET)
+	public String uploadDoc(HttpServletRequest request) {
+		System.out.println("-----------------------S2S----------------------------------");
+		return "uploadDoc";
+	}
 }
