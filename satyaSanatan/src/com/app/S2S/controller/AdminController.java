@@ -1,5 +1,7 @@
 package com.app.S2S.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -11,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.app.S2S.beans.ContactUs;
 import com.app.S2S.service.UserDataValue;
+
+import oracle.jdbc.util.Login;
+
+import com.app.S2S.beans.LoginDetails;
 
 @Controller
 public class AdminController {
@@ -31,6 +37,7 @@ public class AdminController {
 	
 	@RequestMapping(value = "getContactUsInfo", method = RequestMethod.GET)
 	public String getContact(@ModelAttribute("contact") ContactUs contact) {
+		System.out.println(contact.getName());
 		udv.saveContact(contact);
 		return "ContactUs";
 	}
@@ -48,5 +55,11 @@ public class AdminController {
 	public String uploadDoc(HttpServletRequest request) {
 		System.out.println("-----------------------S2S----------------------------------");
 		return "uploadDoc";
+	}
+	@RequestMapping(value = "loginPerson", method = RequestMethod.GET)
+	public String loginPerson(HttpServletRequest request,@ModelAttribute("login") LoginDetails login) {
+		System.out.println("-----------------------S2S----------------------------------");
+		List<LoginDetails>auth=udv.loginId(login);
+		return "dashboard";
 	}
 }

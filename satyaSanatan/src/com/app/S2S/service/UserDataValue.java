@@ -1,10 +1,13 @@
 package com.app.S2S.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.app.S2S.beans.ContactUs;
+import com.app.S2S.beans.LoginDetails;
 import com.app.S2S.dao.SanatanDao;
 
 @Service
@@ -19,5 +22,15 @@ public void saveContact(ContactUs contact){
 	dao.saveContact(contact);
 	
 	
+}
+
+@Override
+public int login(LoginDetails l) {
+	return dao.login(l);
+}
+
+@Override
+public List<LoginDetails> loginId(LoginDetails l) {
+	return dao.loginId(l);
 }
 }
