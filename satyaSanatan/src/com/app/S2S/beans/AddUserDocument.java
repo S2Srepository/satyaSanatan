@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 @Entity(name="AddUserDocument")
 @Table(name="AddUserDocument")
@@ -24,6 +27,14 @@ public class AddUserDocument {
 	private String fileName;
 	@Column
 	private String filePath;
+	@Transient
+	public CommonsMultipartFile[] files;
+	public CommonsMultipartFile[] getFiles() {
+		return files;
+	}
+	public void setFiles(CommonsMultipartFile[] files) {
+		this.files = files;
+	}
 	public AddUserDocument(int id,String name,String mobile,String mail,String fileDiscription,String fileName,String filePath){
 		this.id=id;
 		this.name=name;
