@@ -32,7 +32,7 @@ sessionFactory.getCurrentSession().saveOrUpdate(contact);
 	@Override
 	public List<LoginDetails> loginId(LoginDetails l) {
 		Query query = sessionFactory.getCurrentSession()
-				.createQuery("from LoginDetails1 where password=:pass and username=:user");
+				.createQuery("from LoginDetails where password=:pass and username=:user");
 		query.setParameter("user", l.getUsername());
 		query.setParameter("pass", l.getPassword());
 		List<LoginDetails> list = ((org.hibernate.query.Query) query).list();

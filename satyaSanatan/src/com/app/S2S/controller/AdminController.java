@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.app.S2S.beans.ContactUs;
 import com.app.S2S.service.UserDataValue;
-
-import oracle.jdbc.util.Login;
-
 import com.app.S2S.beans.LoginDetails;
 
 @Controller
@@ -36,9 +33,11 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "getContactUsInfo", method = RequestMethod.GET)
-	public String getContact(@ModelAttribute("contact") ContactUs contact) {
+	public String getContact(@ModelAttribute("contact") ContactUs contact,HttpServletRequest request) {
 		System.out.println(contact.getName());
 		udv.saveContact(contact);
+		String msg= "thankyou";
+		request.setAttribute("msge",msg);
 		return "ContactUs";
 	}
 	@RequestMapping(value = "About_Us", method = RequestMethod.GET)
