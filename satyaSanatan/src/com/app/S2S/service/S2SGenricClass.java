@@ -11,6 +11,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 @Service
 public class S2SGenricClass {
+	
 public Object saveFile(CommonsMultipartFile[] file,String path ,Object vi,String fileval) throws InstantiationException, IllegalAccessException{
 	Class e = vi.getClass();
 	String className = e.getName();
