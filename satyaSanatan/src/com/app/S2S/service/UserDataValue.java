@@ -24,7 +24,7 @@ public void saveContact(ContactUs contact){
 	
 	
 }
-
+ 
 @Override
 public int login(LoginDetails l) {
 	return dao.login(l);
@@ -37,7 +37,7 @@ public List<LoginDetails> loginId(LoginDetails l) {
 
 @Override
 public void saveDocument(AddUserDocument addDoc) {
-	dao.saveDocument(addDoc);
+	dao.saveDocument(addDoc); 
 }
 
 

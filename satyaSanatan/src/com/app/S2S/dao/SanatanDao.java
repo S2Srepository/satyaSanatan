@@ -29,7 +29,7 @@ sessionFactory.getCurrentSession().saveOrUpdate(contact);
 						+ "' and username='" + l.getUsername() + "'  ")
 				.uniqueResult()).intValue();
 		return count;
-	}
+	} 
 	@Override
 	public List<LoginDetails> loginId(LoginDetails l) {
 		Query query = sessionFactory.getCurrentSession()
@@ -44,5 +44,5 @@ sessionFactory.getCurrentSession().saveOrUpdate(contact);
 		sessionFactory.getCurrentSession().saveOrUpdate(addDoc);
 	}
 
-   
+    
 }

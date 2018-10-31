@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.app.S2S.beans.AddUserDocument;
 import com.app.S2S.beans.ContactUs;
-import com.app.S2S.beans.LoginDetails;
+import com.app.S2S.beans.LoginDetails; 
 
 public interface UserData {
 	
