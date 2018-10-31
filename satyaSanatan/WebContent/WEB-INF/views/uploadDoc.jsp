@@ -55,7 +55,7 @@
         <div class="col-md-12">
           <p style="color: #222; font-size: 19px;">A Team of individual software developers who want to develop a platform to boost interest of this generation towards spirituality. The purpose is to create repository of Indian Texts and serve as a one stop shop of</p>
             <div class="well well-sm">
-                <form>
+                <form action="Upload_document">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -63,21 +63,21 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="fa fa-user fa-lg fa-fw" aria-hidden="true"></span>
                                 </span>
-                                <input type="name" class="form-control" id="name" placeholder="Enter Full Name" required="required" /></div>
+                                <input type="name" class="form-control" name="name" placeholder="Enter Full Name" required="required" /></div>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></span>
                                 </span>
-                                <input type="email" class="form-control" id="email" placeholder="Enter Email Address" required="required" /></div>
+                                <input type="email" class="form-control" name="email" placeholder="Enter Email Address" required="required" /></div>
                         </div>
                         <div class="form-group">
                             <label for="Mobilenumber">Mobile Number</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><span  class="fa fa-mobile fa-lg fa-fw" aria-hidden="true"></span>
                                 </span>
-                                <input type="mobile" class="form-control" maxlength="15" minlength="10" id="mobile" placeholder="Enter Mobile Number" required="required" /></div>
+                                <input type="mobile" class="form-control" maxlength="15" minlength="10" name="mobile" placeholder="Enter Mobile Number" required="required" /></div>
                         </div>
                        <!--  <div class="form-group">
                             <label for="name">Mobile Number</label>
@@ -91,7 +91,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Description</label>
-                            <textarea name="description" id="description" class="form-control" rows="9" cols="25" required="required"
+                            <textarea name="description" name="description" class="form-control" rows="9" cols="25" required="required"
                                 placeholder="Write Description here.."></textarea>
                         </div>
                     </div>

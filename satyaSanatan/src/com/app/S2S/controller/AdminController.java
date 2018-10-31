@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.app.S2S.beans.AddUserDocument;
 import com.app.S2S.beans.ContactUs;
 import com.app.S2S.service.UserDataValue;
 import com.app.S2S.beans.LoginDetails;
@@ -51,10 +52,12 @@ public class AdminController {
 		return "login";
 	}
 	@RequestMapping(value = "Upload_document", method = RequestMethod.GET)
-	public String uploadDoc(HttpServletRequest request) {
+	public String uploadDoc(@ModelAttribute("addDoc") AddUserDocument addDoc) {
 		System.out.println("-----------------------S2S----------------------------------");
+		System.out.println(addDoc.getFileName());
+		udv.saveDocument(addDoc);
 		return "uploadDoc";
-	}
+		}
 	@RequestMapping(value = "loginPerson", method = RequestMethod.GET)
 	public String loginPerson(HttpServletRequest request,@ModelAttribute("login") LoginDetails login) {
 		System.out.println("-----------------------S2S----------------------------------");

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.app.S2S.beans.AddUserDocument;
 import com.app.S2S.beans.ContactUs;
 import com.app.S2S.beans.LoginDetails;
 import com.app.S2S.dao.SanatanDao;
@@ -33,4 +34,11 @@ public int login(LoginDetails l) {
 public List<LoginDetails> loginId(LoginDetails l) {
 	return dao.loginId(l);
 }
+
+@Override
+public void saveDocument(AddUserDocument addDoc) {
+	dao.saveDocument(addDoc);
+}
+
+
 }

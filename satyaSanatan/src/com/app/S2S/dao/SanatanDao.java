@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.app.S2S.beans.LoginDetails;
+import com.app.S2S.beans.AddUserDocument;
 import com.app.S2S.beans.ContactUs;
 @Repository
 public class SanatanDao implements SanatanDaoInteface {
@@ -37,6 +38,10 @@ sessionFactory.getCurrentSession().saveOrUpdate(contact);
 		query.setParameter("pass", l.getPassword());
 		List<LoginDetails> list = ((org.hibernate.query.Query) query).list();
 		return list;
+	}
+	@Override
+	public void saveDocument(AddUserDocument addDoc) {
+		sessionFactory.getCurrentSession().saveOrUpdate(addDoc);
 	}
 
    
