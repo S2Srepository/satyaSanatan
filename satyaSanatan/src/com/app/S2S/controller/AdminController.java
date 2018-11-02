@@ -26,6 +26,22 @@ public class AdminController {
 		System.out.println("h......");
 		return "home";
 	}
+	@RequestMapping(value = "dashbord", method = RequestMethod.GET)
+	public String dashbord(HttpServletRequest request) {
+		System.out.println("-----------------------S2S----------------------------------");
+		return "AdminDashboard";
+	}
+	@RequestMapping(value = "Add-Main-Category", method = RequestMethod.GET)
+	public String addMainCategory(HttpServletRequest request) {
+		System.out.println("-----------------------S2S----------------------------------");
+		return "AddCategory";
+	}
+	@RequestMapping(value = "Add-Sub-Category", method = RequestMethod.GET)
+	public String addsubCategory(HttpServletRequest request) {
+		System.out.println("-----------------------S2S----------------------------------");
+		return "subCategory";
+	}
+	
 	@RequestMapping(value = "Contact_US", method = RequestMethod.GET)
 	public String contactUs(HttpServletRequest request) {
 		System.out.println("-----------------------S2S----------------------------------");
