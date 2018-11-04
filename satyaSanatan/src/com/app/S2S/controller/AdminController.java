@@ -52,10 +52,11 @@ public class AdminController {
 		return "login";
 	}
 	@RequestMapping(value = "Upload_document", method = RequestMethod.GET)
-	public String uploadDoc(@ModelAttribute("addDoc") AddUserDocument addDoc) {
+	public String uploadDoc(HttpServletRequest request,@ModelAttribute("addDoc") AddUserDocument addDoc) {
 		System.out.println("-----------------------S2S----------------------------------");
-		System.out.println(addDoc.getFileName());
 		udv.saveDocument(addDoc);
+		System.out.println(addDoc.getFileName());
+		System.out.println(request.getServletContext().getRealPath(addDoc.toString()));
 		return "uploadDoc";
 		}
 	@RequestMapping(value = "loginPerson", method = RequestMethod.GET)

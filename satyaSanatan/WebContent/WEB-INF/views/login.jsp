@@ -22,14 +22,14 @@ body#LoginForm{ background-image:url("img/geeta1.png"); background-repeat:no-rep
    <h2>Admin Login</h2>
    <p>Please enter your email and password</p>
    </div>
-    <form id="Login">
+    <form id="Login" action="loginPerson">
 
         <div class="form-group">
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+            <input type="email" class="form-control" name="username" placeholder="Email Address">
         </div>
 
         <div class="form-group">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <input type="password" class="form-control" name="password" placeholder="Password">
         </div>
 
         <div class="forgot">
@@ -40,7 +40,7 @@ body#LoginForm{ background-image:url("img/geeta1.png"); background-repeat:no-rep
 
     </form>
     </div>
-
+    
 <p class="botto-text"></p>
 
 </div>

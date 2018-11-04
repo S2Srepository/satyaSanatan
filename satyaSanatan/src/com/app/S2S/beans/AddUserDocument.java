@@ -76,9 +76,13 @@ public class AddUserDocument {
 		this.fileDiscription = fileDiscription;
 	}
 	public String getFileName() {
+
 		return fileName;
 	}
 	public void setFileName(String fileName) {
+		fileName = fileName.substring(fileName.lastIndexOf("\\")+1, fileName.length());
+		System.out.println(fileName);
+
 		this.fileName = fileName;
 	}
 	public String getFilePath() {
@@ -86,6 +90,11 @@ public class AddUserDocument {
 	}
 	public void setFilePath(String filePath) {
 		this.filePath = filePath;
+	}
+
+	public AddUserDocument()
+	{
+		
 	}
 
 }

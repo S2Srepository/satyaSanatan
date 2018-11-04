@@ -42,6 +42,7 @@ sessionFactory.getCurrentSession().saveOrUpdate(contact);
 	@Override
 	public void saveDocument(AddUserDocument addDoc) {
 		sessionFactory.getCurrentSession().saveOrUpdate(addDoc);
+	
 	}
 
     

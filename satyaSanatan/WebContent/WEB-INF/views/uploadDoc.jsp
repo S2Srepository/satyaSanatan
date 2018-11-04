@@ -70,7 +70,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></span>
                                 </span>
-                                <input type="email" class="form-control" name="email" placeholder="Enter Email Address" required="required" /></div>
+                                <input type="email" class="form-control" name="mail" placeholder="Enter Email Address" required="required" /></div>
                         </div>
                         <div class="form-group">
                             <label for="Mobilenumber">Mobile Number</label>
@@ -85,13 +85,13 @@
                         </div> -->
                         <div class="form-group">
                             <label class="newbtn blah" for="subject">Upload File</label>
-                            <input id="pic" class='pis' onchange="readURL(this);" type="file" accept=".png,.jpg,.jpeg,.pdf" >
+                            <input name="fileName" class='pis' onchange="readURL(this); " type="file" accept=".png,.jpg,.jpeg,.pdf" >
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Description</label>
-                            <textarea name="description" name="description" class="form-control" rows="9" cols="25" required="required"
+                            <textarea name="fileDiscription"  class="form-control" rows="9" cols="25" required="required"
                                 placeholder="Write Description here.."></textarea>
                         </div>
                     </div>
@@ -123,9 +123,9 @@
     <script src="js/bootstrap.min.js"></script>
      <script src="js/bootstrap.js"></script>
 
-     <script>
+  <script>
  
- $('.newbtn').bind("click" , function () {
+       $('.newbtn').bind("click" , function () {
         $('#pic').click();
  });
  
@@ -142,6 +142,5 @@
             }
         }
 </script>
-     
   </body>
 </html>

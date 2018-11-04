@@ -37,6 +37,7 @@ public List<LoginDetails> loginId(LoginDetails l) {
 
 @Override
 public void saveDocument(AddUserDocument addDoc) {
+	
 	dao.saveDocument(addDoc); 
 }
 
