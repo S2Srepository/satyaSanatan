@@ -2,6 +2,7 @@ package com.app.S2S.controller;
 
 import java.util.List;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.app.S2S.beans.ContactUs;
+import com.app.S2S.service.SendMail;
 import com.app.S2S.service.UserDataValue;
 import com.app.S2S.beans.LoginDetails;
 
@@ -21,6 +23,8 @@ public class AdminController {
 	UserDataValue udv;
 	@Autowired
 	private HttpSession session;
+	@Autowired
+	SendMail sendmail;
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String ragistration(HttpServletRequest request) {
 		System.out.println("h......");
@@ -49,13 +53,16 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "getContactUsInfo", method = RequestMethod.GET)
-	public String getContact(@ModelAttribute("contact") ContactUs contact,HttpServletRequest request) {
+	public String getContact(@ModelAttribute("contact") ContactUs contact,HttpServletRequest request) throws MessagingException
+	{
 		System.out.println(contact.getName());
 		udv.saveContact(contact);
+		String email=contact.getEmail();
+		sendmail.sendMail("Thank you", "Thank you for your feedback", email);
 		String msg= "thankyou";
 		request.setAttribute("msge",msg);
 		return "ContactUs";
-	}
+}
 	@RequestMapping(value = "About_Us", method = RequestMethod.GET)
 	public String about(HttpServletRequest request) {
 		System.out.println("-----------------------S2S----------------------------------");
