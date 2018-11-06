@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,15 +16,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.app.S2S.beans.AddUserDocument;
 import com.app.S2S.beans.ContactUs;
+import com.app.S2S.service.S2SGenricClass;
 import com.app.S2S.service.UserDataValue;
 import com.app.S2S.beans.LoginDetails;
+import com.app.S2S.beans.Maicategory;
 
 @Controller
 public class AdminController {
+	@Value("${pathForDoc}") 
+	private String path;
+
+	@Autowired
+	AdminController ac;
+	@Autowired
+	S2SGenricClass genClass;
 	@Autowired
 	UserDataValue udv;
 	@Autowired
 	private HttpSession session;
+	
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String ragistration(HttpServletRequest request) {
 		System.out.println("h......");
@@ -33,9 +46,13 @@ public class AdminController {
 		return "AdminDashboard";
 	}
 	@RequestMapping(value = "Add-Main-Category", method = RequestMethod.GET)
-	public String addMainCategory(HttpServletRequest request) {
+	public String addMainCategory(@ModelAttribute("mainCat") Maicategory mainCat,HttpServletRequest request) throws InstantiationException, IllegalAccessException {
 		System.out.println("-----------------------S2S----------------------------------");
+		udv.saveCategory(mainCat);
+		genClass.saveFile(mainCat.getFiles(), path , this , mainCat.getFileName());
+		System.out.println(path);
 		return "AddCategory";
+		
 	}
 	@RequestMapping(value = "Add-Sub-Category", method = RequestMethod.GET)
 	public String addsubCategory(HttpServletRequest request) {

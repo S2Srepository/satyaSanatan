@@ -85,7 +85,7 @@
                         </div> -->
                         <div class="form-group">
                             <label class="newbtn blah" for="subject">Upload File</label>
-                            <input name="fileName" class='pis' onchange="readURL(this); " type="file" accept=".png,.jpg,.jpeg,.pdf" >
+                            <input name="fileName" class='pis' onchange="readURL(this);" type="file" accept=".png,.jpg,.jpeg,.pdf" >
                         </div>
                     </div>
                     <div class="col-md-6">

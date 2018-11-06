@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 @Entity(name="Maicategory")
@@ -16,23 +17,26 @@ public class Maicategory {
 	@GeneratedValue
 	private int id;
 	@Column
-	private String catDiscription;
-	@Column
 	private String CatName;
+	@Column
+	private String catTitle;
+	@Column
+	private String catDiscription;
 	@Column
 	private String fileName;
 	@Column
 	private String filePath;
+
 	@Transient
 	public CommonsMultipartFile[] files;
 	public Maicategory(){}
-	public Maicategory(int id ,String catDiscription,String CatName,String fileName,String filePath){
+	public Maicategory(int id ,String catDiscription,String CatName,String fileName,String filePath,String catTitle){
 		this.catDiscription=catDiscription;
 		this.id=id;
 		this.CatName=CatName;
 		this.fileName=fileName;
 		this.filePath=filePath;
-		
+		this.catTitle=catTitle;
 		
 	}
 	public int getId() {
@@ -71,6 +75,11 @@ public class Maicategory {
 	public void setFiles(CommonsMultipartFile[] files) {
 		this.files = files;
 	}
-
+	public String getCatTitle() {
+		return catTitle;
+	}
+	public void setCatTitle(String catTitle) {
+		this.catTitle = catTitle;
+	}
 
 }

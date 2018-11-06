@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.app.S2S.beans.AddUserDocument;
 import com.app.S2S.beans.ContactUs;
 import com.app.S2S.beans.LoginDetails;
+import com.app.S2S.beans.Maicategory;
 import com.app.S2S.dao.SanatanDao;
 
 @Service
@@ -39,6 +40,11 @@ public List<LoginDetails> loginId(LoginDetails l) {
 public void saveDocument(AddUserDocument addDoc) {
 	
 	dao.saveDocument(addDoc); 
+	}
+
+@Override
+public void saveCategory(Maicategory mainCat) {
+	dao.saveCategory(mainCat);
 }
 
 

@@ -125,11 +125,14 @@
                                 <strong>Add Category</strong> <small> (Main)</small>
                             </div>
                             <div class="card-body card-block">
-                                <div class="form-group">
+		
+		<form action="Add-Main-Category">
+		
+							<div class="form-group">
                                     <label class=" form-control-label">Category Name</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        <input class="form-control">
+                                        <input type="text" name="CatName" class="form-control" >
                                     </div>
                                     <small class="form-text text-muted">Category Title </small>
                                 </div>
@@ -137,7 +140,7 @@
                                     <label class=" form-control-label"> Category Title</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                                                                <input class="form-control">
+                                         <input type="text" name="catTitle" class="form-control" >
                                         
                                     </div>
                                     <small class="form-text text-muted">ex. (999) 999-9999</small>
@@ -146,7 +149,7 @@
                                     <label class=" form-control-label">Category Discription</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-usd"></i></div>
-                                                                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea type="text" name="catDiscription" class="form-control" rows="3" ></textarea>
                                         
                                     </div>
                                     <small class="form-text text-muted">Maximum 100 Words</small>
@@ -155,15 +158,16 @@
                                     <label class=" form-control-label">Upload Image</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-male"></i></div>
-                                        <input type="file" class="form-control">
+                                        <input type="file" class="form-control" name="fileName" accept=".jpeg,.jpg,.png" >
                                     </div>
                                     <small class="form-text text-muted">Only JPEG,jpg,png</small>
                                 </div>
                              
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input class="btn btn-info"  value="Submit" type="submit">
+                                        <input type="submit" value="Submit"  class="btn btn-info"  >
                                     </div>
+			</form>									
                                 </div>
                             </div>
                         </div>

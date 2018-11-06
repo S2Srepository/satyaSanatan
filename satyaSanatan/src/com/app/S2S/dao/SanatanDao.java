@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.app.S2S.beans.LoginDetails;
+import com.app.S2S.beans.Maicategory;
 import com.app.S2S.beans.AddUserDocument;
 import com.app.S2S.beans.ContactUs;
 @Repository
@@ -25,7 +26,7 @@ sessionFactory.getCurrentSession().saveOrUpdate(contact);
 	public int login(LoginDetails l) {
 
 		int count = ((Long) sessionFactory.getCurrentSession()
-				.createQuery("select count(*) from LoginDetails1 where password='" + l.getPassword()
+				.createQuery("select count(*) from LoginDetails where password='" + l.getPassword()
 						+ "' and username='" + l.getUsername() + "'  ")
 				.uniqueResult()).intValue();
 		return count;
@@ -41,8 +42,12 @@ sessionFactory.getCurrentSession().saveOrUpdate(contact);
 	}
 	@Override
 	public void saveDocument(AddUserDocument addDoc) {
-		sessionFactory.getCurrentSession().saveOrUpdate(addDoc);
+		sessionFactory.getCurrentSession().saveOrUpdate(addDoc);	
+	}
 	
+	@Override
+	public void saveCategory(Maicategory mainCat) {
+		sessionFactory.getCurrentSession().saveOrUpdate(mainCat);		
 	}
 
     

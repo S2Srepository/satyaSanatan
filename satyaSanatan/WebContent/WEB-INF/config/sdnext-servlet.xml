@@ -63,7 +63,7 @@ http://www.springframework.org/schema/aop
 	<property name="location" value="/WEB-INF/values.properties" />
 
 </bean> 
-   <!--  <bean
+   <!--  <bean>
 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">
 			<props>
@@ -77,7 +77,8 @@ http://www.springframework.org/schema/aop
         <property name="url" value="${database.url}"></property>
         <property name="username" value="${database.user}"></property>
         <property name="password" value="${database.password}"></property>
-    </bean>
+<!-- 		<property name="pathForDoc" value="${pathForDoc}"></property>   
+ -->    </bean>
 
     <!-- Hibernate SessionFactory -->
    
