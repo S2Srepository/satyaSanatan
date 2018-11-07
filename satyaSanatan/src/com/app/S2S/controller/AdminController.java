@@ -50,7 +50,6 @@ public class AdminController {
 		System.out.println("-----------------------S2S----------------------------------");
 		udv.saveCategory(mainCat);
 		genClass.saveFile(mainCat.getFiles(), path , this , mainCat.getFileName());
-		System.out.println(path);
 		return "AddCategory";
 		
 	}
