@@ -45,8 +45,8 @@ http://www.springframework.org/schema/aop
 		 <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="smtp.gmail.com" />
         
-        <property name="username" value="banerjee.ielts@gmail.com" />
-        <property name="password" value="Banerjee@12345" />
+        <property name="username" value="silicon2software@gmail.com" />
+        <property name="password" value="Silicon@123" />
         <property name="javaMailProperties">
             <props>  
               <prop key="mail.smtp.auth">true</prop>  
