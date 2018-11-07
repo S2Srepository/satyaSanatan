@@ -35,6 +35,10 @@ public class AddUserDocument {
 	public void setFiles(CommonsMultipartFile[] files) {
 		this.files = files;
 	}
+	public AddUserDocument()
+	{
+		
+	}
 	public AddUserDocument(int id,String name,String mobile,String mail,String fileDiscription,String fileName,String filePath){
 		this.id=id;
 		this.name=name;

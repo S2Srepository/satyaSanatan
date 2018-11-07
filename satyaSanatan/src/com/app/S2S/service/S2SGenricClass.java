@@ -28,7 +28,7 @@ public Object saveFile(CommonsMultipartFile[] file,String path ,Object vi,String
 				f.mkdirs();
 				String filename = fl.getOriginalFilename();
 				String ex = filename.substring(filename.lastIndexOf(".") + 1);
-				newfile = fileval + "." + ex;
+				newfile = filename+fileval + "." + ex;
 				System.err.println("----" + ex + "-------");
 				System.out.println(path + " " + filename);
 				newPath = path + "/" + newfile;
@@ -39,9 +39,9 @@ public Object saveFile(CommonsMultipartFile[] file,String path ,Object vi,String
 				stream.flush();
 				
 					stream.close();
-					Method setfilenameVale =e.getMethod("setFilename", String.class);
+					Method setfilenameVale =e.getMethod("setFileName", String.class);
 					setfilenameVale.invoke(obj, newfile);
-					Method setfilepath =e.getMethod("setFilepath", String.class);
+					Method setfilepath =e.getMethod("setFilePath", String.class);
 					setfilepath.invoke(obj, newPath);
 				}
 			}

@@ -6,12 +6,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.app.S2S.beans.AddUserDocument;
 import com.app.S2S.beans.ContactUs;
+import com.app.S2S.service.S2SGenricClass;
 import com.app.S2S.service.UserDataValue;
 import com.app.S2S.beans.LoginDetails;
 
@@ -20,6 +23,10 @@ public class AdminController {
 	@Autowired
 	UserDataValue udv;
 	@Autowired
+	S2SGenricClass s2s;
+	@Autowired
+	@Value("${pathForDoc}")
+	String path;
 	private HttpSession session;
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String ragistration(HttpServletRequest request) {
@@ -68,6 +75,18 @@ public class AdminController {
 	}
 	@RequestMapping(value = "Upload_document", method = RequestMethod.GET)
 	public String uploadDoc(HttpServletRequest request) {
+		System.out.println("-----------------------S2S----------------------------------");
+		return "uploadDoc";
+	}
+	@RequestMapping(value = "Upload_document_value", method = RequestMethod.POST)
+	public String uploadDocValue(HttpServletRequest request,@ModelAttribute("up") AddUserDocument up) {
+		try {
+			AddUserDocument ad=(AddUserDocument) s2s.saveFile(up.getFiles(), path, up, "newFile");
+		up.setFileName(ad.getFileName());
+		up.setFilePath(ad.getFilePath());
+		} catch (InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
+		}
 		System.out.println("-----------------------S2S----------------------------------");
 		return "uploadDoc";
 	}
