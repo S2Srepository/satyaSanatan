@@ -83,7 +83,7 @@ public class AdminController {
 		try {
 			AddUserDocument ad=(AddUserDocument) s2s.saveFile(up.getFiles(), path, up, "newFile");
 		up.setFileName(ad.getFileName());
-		up.setFilePath(ad.getFilePath());
+		up.setFilePath(ad.getFilePath()); 
 		} catch (InstantiationException | IllegalAccessException e) {
 			e.printStackTrace();
 		}
