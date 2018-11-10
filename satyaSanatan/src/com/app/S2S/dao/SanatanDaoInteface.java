@@ -14,4 +14,5 @@ public interface SanatanDaoInteface {
 	public List<LoginDetails> loginId(LoginDetails l);
 	public void saveDocument(AddUserDocument addDoc);
 	public void saveCategory(Maicategory mainCat);
+	public List<Maicategory> getMainCategory();
 }

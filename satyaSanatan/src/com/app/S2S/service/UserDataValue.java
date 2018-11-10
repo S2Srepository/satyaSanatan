@@ -47,5 +47,11 @@ public void saveCategory(Maicategory mainCat) {
 	dao.saveCategory(mainCat);
 }
 
+@Override
+public List<Maicategory> getMainCategory() {
+	
+	return dao.getMainCategory();
+}
+
 
 }

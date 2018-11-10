@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div id="right-panel" class="right-panel">
@@ -126,7 +126,12 @@
                             </div>
                             <div class="card-body card-block">
 		
-		<form action="Add-Main-Category">
+		
+		
+		
+		
+		
+		<form action="Add-Main-Category-Value"  enctype="multipart/form-data" method="post">
 		
 							<div class="form-group">
                                     <label class=" form-control-label">Category Name</label>
@@ -158,7 +163,7 @@
                                     <label class=" form-control-label">Upload Image</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-male"></i></div>
-                                        <input type="file" class="form-control" name="fileName" accept=".jpeg,.jpg,.png" >
+                                        <input type="file" class="form-control" name="files"  >
                                     </div>
                                     <small class="form-text text-muted">Only JPEG,jpg,png</small>
                                 </div>
@@ -182,6 +187,7 @@
                             <strong class="card-title">Data Table</strong>
                         </div>
                         <div class="card-body">
+                                    
                   <table id="bootstrap-data-table" class="table table-striped table-bordered">
                     <thead>
                       <tr>
@@ -194,6 +200,30 @@
                       </tr>
                     </thead>
                     <tbody>
+                    <c:forEach var="a" items="${maincatValues}">
+                    <tr>
+                    <td>
+                    <img alt="File" src="/SatyaSanatan/${a.fileName}">
+                    </td>
+                    <td>
+                    ${a.catName}
+                    </td>
+					<td>
+					${a.catTitle }
+					</td>
+					<td>
+					${a.catDiscription }
+					</td>
+					<td>
+               
+                        <a href="#" onclick="delete('${a.id}')"><i class="fa fa-trash-o" style="font-size:24px"></i></a>&nbsp;&nbsp;&nbsp;
+                          <a href="#myModal" onclick="update('${a.id}','','')" data-toggle="modal" ><i class="fa fa-edit" style="font-size:24px"></i></a>
+					</td>
+					
+										
+                    </tr>
+                    
+                    </c:forEach>
                     </tbody>
                   </table>
                         </div>
@@ -206,5 +236,67 @@
         </div>
 </div>
 </div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+   		<form action="Add-Main-Category-Value"  enctype="multipart/form-data" method="post">
+		
+							<div class="form-group">
+                                    <label class=" form-control-label">Category Name</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                        <input type="text" name="CatName" class="form-control" >
+                                    </div>
+                                    <small class="form-text text-muted">Category Title </small>
+                                </div>
+                                <div class="form-group">
+                                    <label class=" form-control-label"> Category Title</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                         <input type="text" name="catTitle" class="form-control" >
+                                        
+                                    </div>
+                                    <small class="form-text text-muted">ex. (999) 999-9999</small>
+                                </div>
+                                <div class="form-group">
+                                    <label class=" form-control-label">Category Discription</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-usd"></i></div>
+                                <textarea type="text" name="catDiscription" class="form-control" rows="3" ></textarea>
+                                        
+                                    </div>
+                                    <small class="form-text text-muted">Maximum 100 Words</small>
+                                </div>
+                                <div class="form-group">
+                                    <label class=" form-control-label">Upload Image</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-male"></i></div>
+                                        <input type="file" class="form-control" name="files"  >
+                                    </div>
+                                    <small class="form-text text-muted">Only JPEG,jpg,png</small>
+                                </div>
+                             
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="submit" value="Submit"  class="btn btn-info"  >
+                                    </div>
+			</form>	 
+			  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>

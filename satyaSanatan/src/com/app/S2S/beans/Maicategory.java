@@ -22,13 +22,14 @@ public class Maicategory {
 	private String catTitle;
 	@Column
 	private String catDiscription;
+	@Transient
+	public CommonsMultipartFile[] files;
 	@Column
 	private String fileName;
 	@Column
 	private String filePath;
 
-	@Transient
-	public CommonsMultipartFile[] files;
+
 	public Maicategory(){}
 	public Maicategory(int id ,String catDiscription,String CatName,String fileName,String filePath,String catTitle){
 		this.catDiscription=catDiscription;

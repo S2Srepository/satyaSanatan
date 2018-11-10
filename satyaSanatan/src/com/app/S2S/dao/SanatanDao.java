@@ -50,5 +50,12 @@ sessionFactory.getCurrentSession().saveOrUpdate(contact);
 		sessionFactory.getCurrentSession().saveOrUpdate(mainCat);		
 	}
 
+	@Override
+	public List<Maicategory> getMainCategory() {
+	Query query = sessionFactory.getCurrentSession().createQuery("from Maicategory");
+	List<Maicategory> ls = ((org.hibernate.query.Query) query).list();
+		return ls;
+	}
+
     
 }
