@@ -17,11 +17,12 @@ public Object saveFile(CommonsMultipartFile[] file,String path ,Object vi,String
 	String className = e.getName();
 	Object obj = e.newInstance();
 	try {
-
+		
 	String newPath = "";
 	String newfile = "";
 	
 	if (file != null) {
+
 		for (CommonsMultipartFile fl : file) {
 			if (!fl.isEmpty()) {
 				File f = new File(path);
@@ -31,7 +32,7 @@ public Object saveFile(CommonsMultipartFile[] file,String path ,Object vi,String
 				newfile = fileval + "." + ex;
 				System.err.println("----" + ex + "-------");
 				System.out.println(path + " " + filename);
-				newPath = path + "/" + newfile;
+				newPath = path + "\\" + newfile;
 				byte[] bytes = fl.getBytes();
 				BufferedOutputStream stream = new BufferedOutputStream(
 						new FileOutputStream(new File(path + File.separator + newfile)));
@@ -39,9 +40,9 @@ public Object saveFile(CommonsMultipartFile[] file,String path ,Object vi,String
 				stream.flush();
 				
 					stream.close();
-					Method setfilenameVale =e.getMethod("setFilename", String.class);
+					Method setfilenameVale =e.getMethod("setFileName", String.class);
 					setfilenameVale.invoke(obj, newfile);
-					Method setfilepath =e.getMethod("setFilepath", String.class);
+					Method setfilepath =e.getMethod("setFilePath", String.class);
 					setfilepath.invoke(obj, newPath);
 				}
 			}

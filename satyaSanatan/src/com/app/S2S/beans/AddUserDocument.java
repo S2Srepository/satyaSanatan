@@ -88,4 +88,9 @@ public class AddUserDocument {
 		this.filePath = filePath;
 	}
 
+	public AddUserDocument()
+	{
+		
+	}
+
 }

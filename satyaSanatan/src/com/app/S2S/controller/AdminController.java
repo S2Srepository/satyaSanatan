@@ -2,31 +2,42 @@ package com.app.S2S.controller;
 
 import java.util.List;
 
-import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import com.app.S2S.beans.AddUserDocument;
 import com.app.S2S.beans.ContactUs;
-import com.app.S2S.service.SendMail;
+import com.app.S2S.service.S2SGenricClass;
 import com.app.S2S.service.UserDataValue;
 import com.app.S2S.beans.LoginDetails;
+import com.app.S2S.beans.Maicategory;
 
 @Controller
 public class AdminController {
+	private static final String AddCategory = null;
 	@Autowired
 	UserDataValue udv;
 	@Autowired
-	private HttpSession session;
+	S2SGenricClass s2s;
 	@Autowired
-	SendMail sendmail;
+	@Value("${pathForDoc}")
+	String path;
+	@Value("${retrivepath}")
+	String fileURL;
+
+	private HttpSession session;
 	@RequestMapping(value = "home", method = RequestMethod.GET)
 	public String ragistration(HttpServletRequest request) {
+		System.out.println("________________________"+fileURL);
+		//session.setAttribute("fileURL", fileURL);
 		System.out.println("h......");
 		return "home";
 	}
@@ -36,10 +47,32 @@ public class AdminController {
 		return "AdminDashboard";
 	}
 	@RequestMapping(value = "Add-Main-Category", method = RequestMethod.GET)
-	public String addMainCategory(HttpServletRequest request) {
+	public String addMainCategory(HttpServletRequest request,@ModelAttribute("mainCat") Maicategory mainCat) {
+		List<Maicategory> ls = udv.getMainCategory();
+		request.setAttribute("maincatValues", ls);
+
 		System.out.println("-----------------------S2S----------------------------------");
 		return "AddCategory";
 	}
+
+	@RequestMapping(value = "Add-Main-Category-Value", method = RequestMethod.POST)
+	public String addMainCategoryValue(HttpServletRequest request,@ModelAttribute("mainCat") Maicategory mainCat) {
+		try {
+			Maicategory mc=(Maicategory) s2s.saveFile(mainCat.getFiles(), path, mainCat, "newFile");
+		mainCat.setFileName(mc.getFileName());
+		mainCat.setFilePath(mc.getFilePath()); 
+		udv.saveCategory(mainCat);
+
+		} catch (InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
+		}
+		List<Maicategory> ls = udv.getMainCategory();
+		request.setAttribute("maincatValues", ls);
+		System.out.println("-----------------------S2S----------------------------------");
+		return "AddCategory";
+	}
+
+	
 	@RequestMapping(value = "Add-Sub-Category", method = RequestMethod.GET)
 	public String addsubCategory(HttpServletRequest request) {
 		System.out.println("-----------------------S2S----------------------------------");
@@ -53,16 +86,13 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "getContactUsInfo", method = RequestMethod.GET)
-	public String getContact(@ModelAttribute("contact") ContactUs contact,HttpServletRequest request) throws MessagingException
-	{
+	public String getContact(@ModelAttribute("contact") ContactUs contact,HttpServletRequest request) {
 		System.out.println(contact.getName());
 		udv.saveContact(contact);
-		String email=contact.getEmail();
-		sendmail.sendMail("Thank you", "Thank you for your feedback", email);
 		String msg= "thankyou";
 		request.setAttribute("msge",msg);
 		return "ContactUs";
-}
+	}
 	@RequestMapping(value = "About_Us", method = RequestMethod.GET)
 	public String about(HttpServletRequest request) {
 		System.out.println("-----------------------S2S----------------------------------");
@@ -75,6 +105,18 @@ public class AdminController {
 	}
 	@RequestMapping(value = "Upload_document", method = RequestMethod.GET)
 	public String uploadDoc(HttpServletRequest request) {
+		System.out.println("-----------------------S2S----------------------------------");
+		return "uploadDoc";
+	}
+	@RequestMapping(value = "Upload_document_value", method = RequestMethod.POST)
+	public String uploadDocValue(HttpServletRequest request,@ModelAttribute("up") AddUserDocument up) {
+		try {
+			AddUserDocument ad=(AddUserDocument) s2s.saveFile(up.getFiles(), path, up, "newFile");
+		up.setFileName(ad.getFileName());
+		up.setFilePath(ad.getFilePath()); 
+		} catch (InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
+		}
 		System.out.println("-----------------------S2S----------------------------------");
 		return "uploadDoc";
 	}
