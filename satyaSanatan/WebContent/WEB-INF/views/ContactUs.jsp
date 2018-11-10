@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html lang="en">
   <head>
     <meta charset="utf-8">
@@ -120,6 +121,9 @@
 			<div class="col-sm-6" style="box-shadow: 0px 0px 4px 1px grey;">
 			<form class="form-horizontal" action="getContactUsInfo">
 			<div class="form-group" align="center" style="margin:20px ">
+<%-- 	<c:if test="${msge!=NULL}">
+	${msge}
+	</c:if>		 --%>
     <h2>Contact Us</h2>
   </div>
   <div class="form-group">
