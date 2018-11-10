@@ -8,6 +8,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.app.S2S.beans.LoginDetails;
+import com.app.S2S.beans.Maicategory;
+import com.app.S2S.beans.AddUserDocument;
 import com.app.S2S.beans.ContactUs;
 @Repository
 public class SanatanDao implements SanatanDaoInteface {
@@ -24,11 +26,11 @@ sessionFactory.getCurrentSession().saveOrUpdate(contact);
 	public int login(LoginDetails l) {
 
 		int count = ((Long) sessionFactory.getCurrentSession()
-				.createQuery("select count(*) from LoginDetails1 where password='" + l.getPassword()
+				.createQuery("select count(*) from LoginDetails where password='" + l.getPassword()
 						+ "' and username='" + l.getUsername() + "'  ")
 				.uniqueResult()).intValue();
 		return count;
-	}
+	} 
 	@Override
 	public List<LoginDetails> loginId(LoginDetails l) {
 		Query query = sessionFactory.getCurrentSession()
@@ -38,6 +40,22 @@ sessionFactory.getCurrentSession().saveOrUpdate(contact);
 		List<LoginDetails> list = ((org.hibernate.query.Query) query).list();
 		return list;
 	}
+	@Override
+	public void saveDocument(AddUserDocument addDoc) {
+		sessionFactory.getCurrentSession().saveOrUpdate(addDoc);	
+	}
+	
+	@Override
+	public void saveCategory(Maicategory mainCat) {
+		sessionFactory.getCurrentSession().saveOrUpdate(mainCat);		
+	}
 
-   
+	@Override
+	public List<Maicategory> getMainCategory() {
+	Query query = sessionFactory.getCurrentSession().createQuery("from Maicategory");
+	List<Maicategory> ls = ((org.hibernate.query.Query) query).list();
+		return ls;
+	}
+
+    
 }
