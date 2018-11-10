@@ -125,8 +125,21 @@ public class AdminController {
 	@RequestMapping(value = "loginPerson", method = RequestMethod.GET)
 	public String loginPerson(HttpServletRequest request,@ModelAttribute("login") LoginDetails login) {
 		System.out.println("-----------------------S2S----------------------------------");
+		int value=udv.login(login);
+		if(value!=0)
+		{
 		List<LoginDetails>auth=udv.loginId(login);
-		return "dashboard";
+		LoginDetails ld=auth.get(0);
+		session.setAttribute("userObj",ld.getId());
+	//	request.setAttribute("list2", auth);
+//auth.forEach(q->{System.out.println(q.getUsername());});
+
+		return "AdminDashboard";
+		
+		}
+		request.setAttribute("errorMessage","Username or Password is incorrect." );
+		return "login";
+		
 	}
 	
 	@RequestMapping(value = "deleteUser", method = RequestMethod.POST)
