@@ -10,6 +10,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+function delete() {
+	alert('Are you sure to DELETE  Student?');
+	
+   }
+</script>
+
 <div id="right-panel" class="right-panel">
 <header id="header" class="header">
 
@@ -216,8 +224,10 @@
 					</td>
 					<td>
                
-                        <a href="#" onclick="delete('${a.id}')"><i class="fa fa-trash-o" style="font-size:24px"></i></a>&nbsp;&nbsp;&nbsp;
-                          <a href="#myModal" onclick="update('${a.id}','','')" data-toggle="modal" ><i class="fa fa-edit" style="font-size:24px"></i></a>
+                     <!--    <a href="#" onclick="delete('${a.id}')"><i class="fa fa-trash-o" style="font-size:24px"></i></a>&nbsp;&nbsp;&nbsp;
+                       -->
+                       <button onclick="delete()">delete</button>
+                          <a href="#myModal" onclick="update('${a.id}','${a.catName }','${a.catTitle}')" data-toggle="modal" ><i class="fa fa-edit" style="font-size:24px"></i></a>
 					</td>
 					
 										
@@ -236,6 +246,7 @@
         </div>
 </div>
 </div>
+
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -244,7 +255,6 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
       </div>
       <div class="modal-body">
    		<form action="Add-Main-Category-Value"  enctype="multipart/form-data" method="post">
@@ -283,16 +293,16 @@
                                     </div>
                                     <small class="form-text text-muted">Only JPEG,jpg,png</small>
                                 </div>
-                             
+
+									                             
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input type="submit" value="Submit"  class="btn btn-info"  >
+                                        
+                                    </div>
                                     </div>
 			</form>	 
 			  </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
     </div>
 
   </div>

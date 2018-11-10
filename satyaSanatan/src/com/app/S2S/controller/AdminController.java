@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.app.S2S.beans.AddUserDocument;
@@ -125,5 +127,17 @@ public class AdminController {
 		System.out.println("-----------------------S2S----------------------------------");
 		List<LoginDetails>auth=udv.loginId(login);
 		return "dashboard";
+	}
+	
+	@RequestMapping(value = "deleteUser", method = RequestMethod.POST)
+	public @ResponseBody int deleteUser(HttpServletRequest request, @RequestParam("val") String id) {
+		int pas=0;
+		try{
+		//dao.deleteStudent(id);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return pas;
+
 	}
 }
