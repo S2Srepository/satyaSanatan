@@ -81,7 +81,7 @@ public class AdminController {
 	@RequestMapping(value = "Upload_document_value", method = RequestMethod.POST)
 	public String uploadDocValue(HttpServletRequest request,@ModelAttribute("up") AddUserDocument up) {
 		try {
-			AddUserDocument ad=(AddUserDocument) s2s.saveFile(up.getFiles(), path, up, "newFile");
+			AddUserDocument ad=(AddUserDocument) s2s.saveFile(up.getFiles(), path, up, "newFile1");
 		up.setFileName(ad.getFileName());
 		up.setFilePath(ad.getFilePath()); 
 		} catch (InstantiationException | IllegalAccessException e) {
